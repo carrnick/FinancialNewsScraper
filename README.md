@@ -1,6 +1,7 @@
 # MarketWatch Scraper
 Python script that scrapes [MarketWatch](https://www.marketwatch.com/) using BeautifulSoup given a valid stock ticker.
 
+Instantiate object using `fn = MarketWatchScraper(<enter ticker>)`
 
 ## Features
 - Get most recent news and links: `get_news()`
