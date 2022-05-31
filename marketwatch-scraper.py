@@ -9,11 +9,11 @@ from datetime import datetime
 import numpy as np
 
 
-class FinancialNewsScraper:
+class MarketWatchScraper:
     def __init__(self, ticker):
         self.ticker = ticker
     
-    def handle_exception(self):
+    def __handle_exception__(self):
         print(f'Table could not be found with specified ticker: {self.ticker}. Please make sure this ticker is correct.')
         
     def get_news(self):
@@ -177,7 +177,7 @@ class FinancialNewsScraper:
             
         labels = []
         vals = []
-        for i in table.findAll('tr', class_='table__row'):
+        for x in table.findAll('tr', class_='table__row'):
             try:
                 labels.append(i.find('td', class_= 'table__cell w75').text)
                 vals.append(i.find('td', class_= 'table__cell w25').text)
@@ -187,7 +187,7 @@ class FinancialNewsScraper:
         data = pd.DataFrame(zip(labels, vals), columns = ['stat', 'val'])
         return data
 
-fn = FinancialNewsScraper('aapl')
+fn = MarketWatchScraper('aapl')
 
 fn.get_analyst_snapshot()
 fn.get_news()
