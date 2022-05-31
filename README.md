@@ -1,5 +1,5 @@
 # MarketWatch Scraper
-Python script that scrapes MarketWatch using BeautifulSoup given a valid stock ticker.
+Python script that scrapes [MarketWatch](https://www.marketwatch.com/) using BeautifulSoup given a valid stock ticker.
 
 
 ## Features
